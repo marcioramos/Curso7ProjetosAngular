@@ -1,7 +1,7 @@
 /**
  * Serviço responsável por executar as operações da calculadora.
  * 
- * @author Márcio
+ * @author Márcio Ramos<marciochagasramos@gmail.com>
  * @since 1.0.0
  */
 
