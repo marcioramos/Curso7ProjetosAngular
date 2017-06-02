@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalculadoraComponent } from './componentes';
+
+import { CalculadoraComponent } from './components';
+import { CalculadoraService } from './services';
 
 @NgModule({
   imports: [
@@ -11,6 +13,9 @@ import { CalculadoraComponent } from './componentes';
   ],
   exports:[
     CalculadoraComponent
+  ],
+  providers:[
+    CalculadoraService
   ]
 })
 export class CalculadoraModule { }
