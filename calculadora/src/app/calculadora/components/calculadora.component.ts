@@ -62,7 +62,7 @@ export class CalculadoraComponent implements OnInit {
       return '0.';
     }
 
-    if (numConcat === '.' || numAtual.indexOf('.') > -1) {
+    if (numConcat === '.' && numAtual.indexOf('.') > -1) {
       return numAtual;
     }
 
@@ -86,6 +86,7 @@ export class CalculadoraComponent implements OnInit {
       this.resultado = this.calculadoraService.calucar(parseFloat(this.numero1), parseFloat(this.numero2), this.operacao);
       this.operacao = operacao;
       this.numero1 = this.resultado.toString();
+      this.numero2 = null;
       this.resultado = null;
     }
   }
