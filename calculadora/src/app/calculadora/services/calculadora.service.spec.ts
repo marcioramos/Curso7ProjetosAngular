@@ -34,7 +34,7 @@ describe('CalculadoraService', () => {
     })
   );
 
-  it('deve garantir que 1 * 4 = 5',
+  it('deve garantir que 1 * 4 = 4',
     inject([CalculadoraService], (service: CalculadoraService) => {
       let resultado = service.calucar(1, 4, CalculadoraService.MULTIPLICACAO);
       expect(resultado).toEqual(4);
