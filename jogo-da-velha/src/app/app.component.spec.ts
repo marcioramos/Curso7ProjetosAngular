@@ -7,9 +7,11 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        JogoDaVelhaModule
+        AppComponent
       ],
+      imports: [
+        JogoDaVelhaModule
+      ]
     }).compileComponents();
   }));
 
