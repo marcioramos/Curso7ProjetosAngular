@@ -39,8 +39,8 @@ export class JogoDaVelhaComponent implements OnInit {
     return this.jogoDaVelhaService.exibirX(posX, posY);
   }
 
-  exibir0(posX: number, posY: number): boolean {
-    return this.jogoDaVelhaService.exibir0(posX, posY);
+  exibirO(posX: number, posY: number): boolean {
+    return this.jogoDaVelhaService.exibirO(posX, posY);
   }
 
   exibirVitoria(posX: number, posY: number): boolean {
