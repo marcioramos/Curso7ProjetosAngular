@@ -51,6 +51,9 @@ export class JogoDaVelhaComponent implements OnInit {
     return this.jogoDaVelhaService.jogador;
   }
 
+  novoJogo(): void {
+    this.jogoDaVelhaService.novoJogo();
+  }
 
 
 }
