@@ -14,7 +14,7 @@ export class ConversorComponent implements OnInit {
   public moedas: Moeda[];
   public conversao: Conversao;
   public possuiErro: boolean;
-  private conversaoResponse: ConversaoResponse;
+  public conversaoResponse: ConversaoResponse;
 
   @ViewChild("conversaoForm") conversaoForm: NgForm;
 
