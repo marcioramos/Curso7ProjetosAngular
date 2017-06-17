@@ -7,8 +7,4 @@ describe('projeto-final App', () => {
     page = new ProjetoFinalPage();
   });
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
-  });
 });
