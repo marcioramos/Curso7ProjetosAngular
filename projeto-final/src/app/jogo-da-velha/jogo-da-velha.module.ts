@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { JogoDaVelhaComponent } from './jogo-da-velha.component';
 import { JogoDaVelhaService } from './shared';
-import { JogoDaVelhaRoutingComponent } from './jogo-da-velha-routing.component';
 import { JogoDaVelhaRoutingModule } from './jogo-da-velha-routing.module';
+import { JogoDaVelhaRoutingComponent } from './jogo-da-velha-routing.component';
 
 @NgModule({
   imports: [
@@ -12,14 +12,11 @@ import { JogoDaVelhaRoutingModule } from './jogo-da-velha-routing.module';
     JogoDaVelhaRoutingModule
   ],
   declarations: [
-    JogoDaVelhaComponent,
-    JogoDaVelhaRoutingComponent
-  ],
-  exports: [
-    JogoDaVelhaComponent
+  	JogoDaVelhaComponent,
+  	JogoDaVelhaRoutingComponent
   ],
   providers: [
-    JogoDaVelhaService
+  	JogoDaVelhaService
   ]
 })
 export class JogoDaVelhaModule { }

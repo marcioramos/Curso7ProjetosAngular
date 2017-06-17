@@ -10,8 +10,8 @@ export const JogoDaVelhaRoutes: Routes = [
 		component: JogoDaVelhaRoutingComponent,
 		children: [
 		  {
-			path: '',
-			component: JogoDaVelhaComponent
+			path: '', 
+			component: JogoDaVelhaComponent 
 		  }
 		]
 	}

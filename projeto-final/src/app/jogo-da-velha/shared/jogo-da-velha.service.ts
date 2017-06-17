@@ -35,7 +35,7 @@ export class JogoDaVelhaService {
   }
 
   /**
-   * Inicializa o tabuleiro do jogo com vazio para todas
+   * Inicializa o tabuleiro do jogo com vazio para todas 
    * as posições.
    *
    * @return void
@@ -49,7 +49,7 @@ export class JogoDaVelhaService {
 
   /**
    * Retorna se a tela de início deve ser exibida.
-   *
+   * 
    * @return boolean
    */
   get showInicio(): boolean {
@@ -58,7 +58,7 @@ export class JogoDaVelhaService {
 
   /**
    * Retorna se o tabuleiro deve ser exibido.
-   *
+   * 
    * @return boolean
    */
   get showTabuleiro(): boolean {
@@ -67,7 +67,7 @@ export class JogoDaVelhaService {
 
   /**
    * Retorna se a tela de fim de jogo deve ser exibida.
-   *
+   * 
    * @return boolean
    */
   get showFinal(): boolean {
@@ -76,7 +76,7 @@ export class JogoDaVelhaService {
 
   /**
    * Retorna o número do jogador a jogar.
-   *
+   * 
    * @return number
    */
   get jogador(): number {
@@ -102,13 +102,15 @@ export class JogoDaVelhaService {
    */
   jogar(posX: number, posY: number): void {
     // jogada inválida
-    if (this.tabuleiro[posX][posY] !== this.VAZIO || this.vitoria) {
+    if (this.tabuleiro[posX][posY] !== this.VAZIO || 
+      this.vitoria) {
       return;
     }
 
     this.tabuleiro[posX][posY] = this._jogador;
     this.numMovimentos++;
-    this.vitoria = this.fimJogo(posX, posY, this.tabuleiro, this._jogador);
+    this.vitoria = this.fimJogo(posX, posY, 
+      this.tabuleiro, this._jogador);
     this._jogador = (this._jogador === this.X) ? this.O : this.X;
 
     if (!this.vitoria && this.numMovimentos < 9) {
@@ -136,26 +138,34 @@ export class JogoDaVelhaService {
    * @param number jogador
    * @return array
    */
-  fimJogo(linha: number, coluna: number, tabuleiro: any, jogador: number) {
-
+  fimJogo(linha: number, coluna: number, 
+      tabuleiro: any, jogador: number) {
     let fim: any = false;
 
     // valida a linha
-    if (tabuleiro[linha][0] === jogador && tabuleiro[linha][1] === jogador && tabuleiro[linha][2] === jogador) {
+    if (tabuleiro[linha][0] === jogador && 
+      tabuleiro[linha][1] === jogador && 
+      tabuleiro[linha][2] === jogador) {
       fim = [[linha, 0], [linha, 1], [linha, 2]];
     }
 
     // valida a coluna
-    if (tabuleiro[0][coluna] === jogador && tabuleiro[1][coluna] === jogador && tabuleiro[2][coluna] === jogador) {
+    if (tabuleiro[0][coluna] === jogador && 
+      tabuleiro[1][coluna] === jogador && 
+      tabuleiro[2][coluna] === jogador) {
       fim = [[0, coluna], [1, coluna], [2, coluna]];
     }
 
     // valida as diagonais
-    if (tabuleiro[0][0] === jogador && tabuleiro[1][1] === jogador && tabuleiro[2][2] === jogador) {
+    if (tabuleiro[0][0] === jogador && 
+      tabuleiro[1][1] === jogador && 
+      tabuleiro[2][2] === jogador) {
       fim = [[0, 0], [1, 1], [2, 2]];
     }
 
-    if (tabuleiro[0][2] === jogador && tabuleiro[1][1] === jogador && tabuleiro[2][0] === jogador) {
+    if (tabuleiro[0][2] === jogador && 
+      tabuleiro[1][1] === jogador && 
+      tabuleiro[2][0] === jogador) {
       fim = [[0, 2], [1, 1], [2, 0]];
     }
 
@@ -168,7 +178,6 @@ export class JogoDaVelhaService {
    * @return void
    */
   cpuJogar(): void {
-
     // verifica jogada de vitória
     let jogada: number[] = this.obterJogada(this.O);
 
@@ -180,8 +189,8 @@ export class JogoDaVelhaService {
     if (jogada.length <= 0) {
       // joga aleatório
       let jogadas: any = [];
-      for (let i = 0; i < this.TAM_TAB; i++) {
-        for (let j = 0; j < this.TAM_TAB; j++) {
+      for (let i=0; i<this.TAM_TAB; i++) {
+        for (let j=0; j<this.TAM_TAB; j++) {
           if (this.tabuleiro[i][j] === this.VAZIO) {
             jogadas.push([i, j]);
           }
@@ -193,7 +202,8 @@ export class JogoDaVelhaService {
 
     this.tabuleiro[jogada[0]][jogada[1]] = this._jogador;
     this.numMovimentos++;
-    this.vitoria = this.fimJogo(jogada[0], jogada[1], this.tabuleiro, this._jogador);
+    this.vitoria = this.fimJogo(jogada[0], jogada[1],
+        this.tabuleiro, this._jogador);
     this._jogador = (this._jogador === this.X) ? this.O : this.X;
   }
 
@@ -221,7 +231,7 @@ export class JogoDaVelhaService {
   }
 
   /**
-   * Retorna se a peça X deve ser exibida para a
+   * Retorna se a peça X deve ser exibida para a 
    * coordena informada.
    *
    * @param number posX
@@ -233,7 +243,7 @@ export class JogoDaVelhaService {
   }
 
   /**
-   * Retorna se a peça O deve ser exibida para a
+   * Retorna se a peça O deve ser exibida para a 
    * coordena informada.
    *
    * @param number posX
@@ -245,7 +255,7 @@ export class JogoDaVelhaService {
   }
 
   /**
-   * Retorna se a marcação de vitória deve ser exibida para a
+   * Retorna se a marcação de vitória deve ser exibida para a 
    * coordena informada.
    *
    * @param number posX
